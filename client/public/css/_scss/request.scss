@@ -1,9 +1,22 @@
 .request {
 
+  .success-row {
+    transition: 0.5s;
+  }
+
   /* label color */
-   .input-field label {
-     color: color("grey", "base");
-     font-weight: 400;
-   }
+  .input-field label {
+    color: color("grey", "base");
+    font-weight: 400;
+  }
+
+  .spinner-block {
+    display:flex;
+    align-items: center;
+  }
+
+  .spinner-msg {
+    padding-left: 15px;
+  }
 
 }
