@@ -7,12 +7,14 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
+var cors = require('cors');
 // var harp = require('harp');
+
 
 module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
   app.locals.ENV = env;
-  app.locals.ENV_DEVELOPMENT = env == 'development';
+  app.locals.ENV_DEVELOPMENT = env === 'development';
 
   // app.set('views', config.root + '/app/views');
   // app.set('view engine', 'ejs');
@@ -28,6 +30,7 @@ module.exports = function(app, config) {
   // app.use(express.static(config.root + '/../client/public'));
   // app.use(harp.mount(config.root + '/../client'));
   app.use(methodOverride());
+  app.use(cors());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');
   controllers.forEach(function (controller) {

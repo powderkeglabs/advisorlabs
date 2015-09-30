@@ -1,6 +1,7 @@
 var validator = require('validator');
 var express = require('express');
 var router = express.Router();
+
 var db = require('../models');
 
 module.exports = function (app) {
@@ -14,7 +15,8 @@ router.get('/api/v1/', function (req, res, next) {
 
 
 
-//// ROUTE TO REQUEST AN ADVISOR
+/// ROUTE TO REQUEST AN ADVISOR
+/// @NOTE: enable CORS for this route
 router.post('/api/v1/Request', function(req, res, next){
   var params = req.body;
 

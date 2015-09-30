@@ -5,33 +5,44 @@
   angular.module('pklApp', [])
 
     /// Service to call advisor list api
-    .service('Advisors', ['$http', function($http){
+    .service('Services', ['$http', function($http){
 
-      var Advisors = {};
+      var Services = {};
 
       // HTTP call to get advisors
-      Advisors.getAdvisors = function(){
+      Services.getAdvisors = function(){
         return $http.get('/api/advisors.json');
       };
 
-      return Advisors;
+      // HTTP Post to submit an advisor Request
+      Services.postRequest = function(request){
+        return $http.post('http://192.168.1.11:3000/api/v1/Request', request);
+      };
+
+      return Services;
     }])
 
-    .controller('advisorController', ['Advisors', '$scope', function(Advisors, $scope){
+    /// Controller for the Advisors Page
+    .controller('advisorController', ['Services', '$scope', function(Services, $scope){
 
       // Get the Advisor data
-      Advisors.getAdvisors().success(function(data){
+      Services.getAdvisors().success(function(data){
         $scope.advisors = data.Advisors;
       });
 
     }])
 
-    .controller('requestController', ['$scope', function($scope){
-      $scope.step = 1;
+    /// Controller for the Request an Advisor Page
+    .controller('requestController', ['Services', '$scope', function(Services, $scope){
 
-      $scope.requestStep = function(step){
-        $scope.step = step;
-        console.log(step);
+      // Submit the request form request
+      $scope.submitRequest = function(){
+        var request = $scope.request;
+        Services.postRequest(request).then(function(data){
+          console.log(data);
+        }, function(err){
+          console.log(err);
+        });
       };
 
 

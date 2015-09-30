@@ -21,7 +21,7 @@
 
       <div class="row">
 
-          <form name="requestForm" id="requestForm" class="col s12">
+          <form name="requestForm" id="requestForm" class="col s12" ng-submit="submitRequest()">
 
             <!-- First Step -->
               <div class="row">
@@ -32,33 +32,33 @@
 
                 <div class="row">
                   <div class="input-field col s12 m6">
-                    <input type="text" id="fname" class="validate" required>
+                    <input type="text" id="fname" class="validate" required ng-model="request.firstName">
                     <label for="fname">Your First Name</label>
                   </div>
 
                   <div class="input-field col s12 m6">
-                    <input type="text" id="lname" class="validate" required>
+                    <input type="text" id="lname" class="validate" required ng-model="request.lastName">
                     <label for="lname">Your Last Name</label>
                   </div>
                 </div><!-- ./row -->
 
                 <div class="row">
                   <div class="input-field col s12">
-                    <input type="email" id="email" class="validate" required>
+                    <input type="email" id="email" class="validate" required ng-model="request.email">
                     <label for="email">Your Email Address</label>
                   </div>
                 </div><!-- ./row -->
 
                 <div class="row">
                   <div class="input-field col s12">
-                    <textarea id="organization" class="materialize-textarea" length="500" required></textarea>
+                    <textarea id="organization" class="materialize-textarea" length="500" required ng-model="request.orgDesc"></textarea>
                     <label for="organization">Tell Us About Your Organization</label>
                   </div>
                 </div><!-- ./row -->
 
                 <div class="row">
                   <div class="input-field col s12">
-                    <textarea id="question" class="materialize-textarea" length="500" required></textarea>
+                    <textarea id="question" class="materialize-textarea" length="500" required ng-model="request.text"></textarea>
                     <label for="question">How can we help you?</label>
                   </div>
                 </div><!-- ./row -->
@@ -66,7 +66,7 @@
                 <div class="row">
                   <div class="col s12">
                     <div id="success"></div>
-                    <button ng-click="requestStep(2)" type="submit" class="red waves-effect waves-light btn-large">Request Advisor</button>
+                    <button type="submit" class="red waves-effect waves-light btn-large">Request Advisor</button>
                     <p>By clicking on "Request Advisor", you agree to the <a>Terms and Conditions</a>.</p>
                   </div>
                 </div><!-- ./row -->
