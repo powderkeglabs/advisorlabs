@@ -17,6 +17,17 @@ module.exports = function (grunt) {
         file: 'server/app.js'
       }
     },
+    exec: {
+      harp_dev: {
+        cmd: 'harp server client'
+      },
+      harp_compile: {
+        cmd: 'harp compile client'
+      },
+      harp_dist: {
+        cmd: 'harp server client/www'
+      }
+    },
     watch: {
       options: {
         nospawn: true,
@@ -69,6 +80,15 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'develop',
+    'exec:harp_dev',
     'watch'
   ]);
+
+  grunt.registerTask('dist', [
+    'develop',
+    'exec:harp_compile',
+    'exec:harp_dist',
+    'watch'
+  ]);
+
 };
