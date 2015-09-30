@@ -1,0 +1,35 @@
+#logo-container .full {
+  display:none;
+}
+
+#logo-container .small {
+  display:block;
+}
+
+.brand-logo > img {
+  height: 50%;
+}
+
+.side-nav {
+  font-weight: 500;
+}
+
+li.side-nav-brand {
+  border-bottom: 1px solid #ddd;
+  height: 150px;
+  text-align: center;
+  background-color: $fill-color;
+}
+
+li.side-nav-brand:hover {
+  background-color: $fill-color;
+}
+
+@media (min-width: 600px) {
+  #logo-container .full {
+    display: block
+  }
+  #logo-container .small {
+    display: none;
+  }
+}

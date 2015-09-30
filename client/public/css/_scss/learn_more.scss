@@ -1,0 +1,19 @@
+section#learn-more{
+  padding: 0px 0px;
+  color: $text-secondary-color;
+  background-image: url('/images/backgrounds/learn-more-2.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+section#learn-more .fill-overlay {
+  padding: 105px 0px;
+}
+
+section#learn-more h3.cta {
+  font-size: 24px;
+  text-transform: none;
+  font-weight: 400;
+  padding-bottom: 40px;
+}

@@ -1,0 +1,75 @@
+.advisors {
+  // background-color: color("grey", "lighten-3");
+}
+
+.advisors .flex {
+  // justify-content: flex-start;
+  flex-flow: column nowrap;
+}
+
+
+.advisor.card {
+  // flex: 0 1 150px;
+  margin: 15px 10px;
+}
+
+.advisor .card-image {
+  // width: 250px;
+  max-height: 250px;
+  overflow: hidden;
+  // background-position: center;
+  // background-repeat: no-repeat;
+  // background-size: cover;
+}
+
+.advisor .card-content {
+  font-size: 14px;
+}
+
+.advisor .card-reveal {
+  font-size: 14px;
+}
+
+.advisor span {
+  // display: block;
+}
+
+.advice-collection > li {
+  list-style: circle;
+  margin-left: 15px;
+}
+
+// @media(min-width: 450px) {
+//   .advisors .flex {
+//     flex-flow: row wrap;
+//     justify-content: flex-start;
+//   }
+//   .advisor.flex-item  {
+//     flex: 0 1 42%;
+//   }
+// }
+
+@media (min-width: 600px) {
+  .advisors .flex {
+    flex-flow: column nowrap;
+    // justify-content: flex-start;
+  }
+
+  // .advisor.flex-item  {
+  //   flex: 0 1 auto;
+  //   // width: 300px;
+  // }
+}
+
+@media (min-width: 768px) {
+  .advisors .flex {
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  .advisor.flex-item  {
+    flex: 0 1 30%;
+    // width: 300px;
+  }
+}

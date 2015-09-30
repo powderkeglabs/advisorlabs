@@ -7,6 +7,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
+// var harp = require('harp');
 
 module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
@@ -24,7 +25,8 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(compress());
-  // app.use(express.static(config.root + '/public'));
+  // app.use(express.static(config.root + '/../client/public'));
+  // app.use(harp.mount(config.root + '/../client'));
   app.use(methodOverride());
 
   var controllers = glob.sync(config.root + '/app/controllers/*.js');

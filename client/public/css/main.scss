@@ -1,0 +1,23 @@
+$roboto-font-path: '/components/Materialize/font/roboto/';
+$icons-font-path: '/components/Materialize/font/material-design-icons/';
+
+// Materialize Import
+@import '../components/Materialize/sass/materialize.scss';
+
+// App Styles Import
+@import '_scss/colors.scss';
+@import '_scss/nav.scss';
+@import '_scss/index.scss';
+@import '_scss/page.scss';
+@import '_scss/benefits.scss';
+@import '_scss/testimonials.scss';
+@import '_scss/learn_more.scss';
+@import '_scss/team.scss';
+@import '_scss/advisors.scss';
+@import '_scss/work.scss';
+@import '_scss/footer.scss';
+@import '_scss/request.scss';
+
+
+// App Pages Import
+@import '_scss/blog.scss';

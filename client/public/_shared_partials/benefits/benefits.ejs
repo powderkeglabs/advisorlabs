@@ -1,0 +1,40 @@
+<!-- Benefits -->
+<section class="benefits grey lighten-5">
+	<div class="container">
+		<div class="row">
+			<div class="col s12">
+				<h4>We've Made It Easy</h4>
+			</div>
+		</div>
+		<div class="row">
+	    <%- partial('benefit', {
+				title: 'Step 1',
+				image: '/images/connect.jpeg',
+				description: "Tell us about your organization and what you need help with."
+			}) %>
+
+	    <%- partial('benefit', {
+				title: 'Step 2',
+				image: '/images/guidance2.jpeg',
+				description: "We'll connect you to an advisor with the best qualifications to help you."
+			}) %>
+
+	    <%- partial('benefit', {
+				title: 'Step 3',
+				image: '/images/collaborate.jpg',
+				description: "Meet with your advisor and get advised."
+			}) %>
+	  </div>
+	  <!-- /.row -->
+
+		<div class="row">
+      <div class="col s12 center-align">
+        <a href="/request" class="btn-large accent-color waves-effect waves-light">Let's Get Started</a>
+      </div>
+    </div>
+  </div>
+
+	</div>
+	<!-- /.container -->
+</section>
+<!-- /Benefits -->
