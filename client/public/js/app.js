@@ -19,7 +19,8 @@
 
     .controller('advisorController', ['Advisors', '$scope', function(Advisors, $scope){
 
-      var advisors = Advisors.getAdvisors().success(function(data){
+      // Get the Advisor data
+      Advisors.getAdvisors().success(function(data){
         $scope.advisors = data.Advisors;
       });
 
