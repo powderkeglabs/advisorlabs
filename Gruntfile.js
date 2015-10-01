@@ -49,7 +49,7 @@ module.exports = function (grunt) {
         },
         constants: {
           ENV: 'production',
-          HOST: ''          
+          HOST: ''
         }
       },
     },
