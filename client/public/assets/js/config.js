@@ -2,8 +2,8 @@
 
 angular.module('config', [])
 
-.constant('ENV', 'development')
+.constant('ENV', 'production')
 
-.constant('HOST', 'http://192.168.1.11:3000')
+.constant('HOST', '')
 
 ;
