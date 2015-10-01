@@ -28,6 +28,31 @@ module.exports = function (grunt) {
         cmd: 'harp server client/www'
       }
     },
+    ngconstant: {
+      options: {
+        name: 'config',
+        wrap: "'use strict';\n\n{%= __ngModule %}",
+        space: '  '
+      },
+      development: {
+        options: {
+          dest: 'client/public/assets/js/config.js'
+        },
+        constants: {
+          ENV: 'development',
+          HOST: 'http://192.168.1.11:3000'
+        }
+      },
+      production: {
+        options: {
+          dest: 'client/public/assets/js/config.js'
+        },
+        constants: {
+          ENV: 'production',
+          HOST: ''          
+        }
+      },
+    },
     watch: {
       options: {
         nospawn: true,
@@ -80,12 +105,14 @@ module.exports = function (grunt) {
 
   grunt.registerTask('default', [
     'develop',
+    'ngconstant:development',
     'exec:harp_dev',
     'watch'
   ]);
 
   grunt.registerTask('dist', [
     'develop',
+    'ngconstant:production',
     'exec:harp_compile',
     'exec:harp_dist',
     'watch'

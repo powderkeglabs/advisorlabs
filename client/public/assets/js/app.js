@@ -2,10 +2,10 @@
 
   'use strict';
 
-  angular.module('pklApp', [])
+  angular.module('pklApp', ['config'])
 
     /// Service to call advisor list api
-    .service('Services', ['$http', function($http){
+    .service('Services', ['HOST', '$http', function(HOST, $http){
 
       var Services = {};
 
@@ -16,7 +16,7 @@
 
       // HTTP Post to submit an advisor Request
       Services.postRequest = function(request){
-        return $http.post('http://192.168.1.11:3000/api/v1/Request', request);
+        return $http.post(HOST + '/api/v1/Request', request);
       };
 
       return Services;
