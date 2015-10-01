@@ -27,7 +27,11 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(compress());
-  // app.use(express.static(config.root + '/../client/public'));
+
+  if (env === 'production') {
+    app.use(express.static(config.root + '/../client/www'));
+  }
+
   // app.use(harp.mount(config.root + '/../client'));
   app.use(methodOverride());
   app.use(cors());
