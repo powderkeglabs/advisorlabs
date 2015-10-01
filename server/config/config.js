@@ -27,8 +27,8 @@ var config = {
     app: {
       name: 'advisorlabs'
     },
-    port: 3000,
-    db: process.env.ADVISORLABS_DATABASEURL
+    port: process.env.PORT,
+    db: process.env.DATABASE_URL
   }
 };
 

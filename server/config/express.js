@@ -8,8 +8,7 @@ var bodyParser = require('body-parser');
 var compress = require('compression');
 var methodOverride = require('method-override');
 var cors = require('cors');
-// var harp = require('harp');
-
+var path = require('path');
 
 module.exports = function(app, config) {
   var env = process.env.NODE_ENV || 'development';
@@ -27,8 +26,11 @@ module.exports = function(app, config) {
   }));
   app.use(cookieParser());
   app.use(compress());
-  // app.use(express.static(config.root + '/../client/public'));
-  // app.use(harp.mount(config.root + '/../client'));
+
+  if (env === 'production') {
+    app.use(express.static(config.root + '/../client/www'));
+  }
+
   app.use(methodOverride());
   app.use(cors());
 
@@ -37,11 +39,18 @@ module.exports = function(app, config) {
     require(controller)(app);
   });
 
-  app.use(function (req, res, next) {
-    var err = new Error('Not Found');
-    err.status = 404;
-    next(err);
-  });
+  // app.use(function (req, res, next) {
+  //   console.log("ERROR?");
+  //   var err = new Error('Not Found');
+  //   err.status = 404;
+  //   next(err);
+  // });
+
+  // Resolve to error page
+  app.use('/*', function(req, res, next){
+    res.sendfile(path.resolve(config.root + '/../client/www/404.html'));
+    return;
+  })
 
   // if(app.get('env') === 'development'){
   //   app.use(function (err, req, res, next) {
@@ -55,12 +64,12 @@ module.exports = function(app, config) {
   // }
 
   // app.use(function (err, req, res, next) {
+  //   console.log("ERROR!?");
   //   res.status(err.status || 500);
-  //     res.render('error', {
-  //       message: err.message,
-  //       error: {},
-  //       title: 'error'
-  //     });
+  //
+  //   res.sendFile(config.root + '/../client/www/404.html');
+  //   return;
+  //
   // });
 
 };

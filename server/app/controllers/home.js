@@ -5,11 +5,11 @@ var router = express.Router();
 var db = require('../models');
 
 module.exports = function (app) {
-  app.use('/', router);
+  app.use('/api', router);
 };
 
 ////
-router.get('/api/v1/', function (req, res, next) {
+router.get('/v1', function (req, res, next) {
   res.send("OK");
 });
 
@@ -17,7 +17,7 @@ router.get('/api/v1/', function (req, res, next) {
 
 /// ROUTE TO REQUEST AN ADVISOR
 /// @NOTE: enable CORS for this route
-router.post('/api/v1/Request', function(req, res, next){
+router.post('/v1/Request', function(req, res, next){
   var params = req.body;
 
   if (!params.firstName || !params.lastName)
