@@ -11,7 +11,7 @@
 
       // HTTP call to get advisors
       Services.getAdvisors = function(){
-        return $http.get('/api/advisors.json');
+        return $http.get('/assets/advisors.json');
       };
 
       // HTTP Post to submit an advisor Request
@@ -43,7 +43,7 @@
         var request = $scope.request;
         $scope.submitted = true;
         $scope.errors = false;
-        
+
         Services.postRequest(request).then(function(data){
 
           console.log(data);

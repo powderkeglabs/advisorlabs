@@ -1,6 +1,6 @@
 .DS_Store
 node_modules/
-client/public/components
+client/public/assets/components
 client/www
 client/dist
 .sass-cache
