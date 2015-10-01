@@ -19,13 +19,13 @@ module.exports = function (grunt) {
     },
     exec: {
       harp_dev: {
-        cmd: 'harp server client'
+        cmd: './node_modules/harp/bin/harp server client'
       },
       harp_compile: {
-        cmd: 'harp compile client'
+        cmd: './node_modules/harp/bin/harp compile client'
       },
       harp_dist: {
-        cmd: 'harp server client/www'
+        cmd: './node_modules/harp/bin/harp server client/www'
       }
     },
     ngconstant: {
