@@ -33,6 +33,7 @@
       <%- yield %>
     <% } %>
 
+    <% // exclude from the advisor request form %>
     <% if(current.path[0] != 'request') { %>
       <%- partial("/_shared_partials/learn_more", {}) %>
     <% } %>
