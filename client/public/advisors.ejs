@@ -43,7 +43,7 @@
               <i class="material-icons right">more_vert</i>
             </span>
             <p>
-              <span class="title" ng-bind="advisor.title"></span> - 
+              <span class="title" ng-bind="advisor.title"></span> -
               <a ng-href="{{advisor.url}}">{{advisor.company}}</a>
               <ul class="advice-collection">
                 <li ng-repeat="specialty in advisor.specialties">{{specialty}}</li>
@@ -64,7 +64,5 @@
       </div>
     </div>
   </section>
-
-  <%- partial("../_shared_partials/learn_more", {}) %>
 
 </main>

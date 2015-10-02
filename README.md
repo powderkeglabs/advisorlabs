@@ -42,18 +42,18 @@ This is still a work in progress.  There are a couple options I have tried.
 
 ## If deploying Digital Ocean
 
-##### 1. Fire up the NodeJS instance on Ubuntu 14.04 and install
+1. Fire up the NodeJS instance on Ubuntu 14.04 and install
  - **Nginx**
  - **Postgres** ([follow this tutorial](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-ruby-on-rails-application-on-ubuntu-14-04) to install and setup a user and database only. Ignore the Rails stuff)
  - **PM2**
 
-##### 2. Clone this Repository
+2. Clone this Repository
 
-##### 3. Install dependencies using `$: cd <dir> && npm install`
+3. Install dependencies using `$: cd <dir> && npm install`
 
-##### 4. Compile the `client` files into static HTML using `$: npm run compile`
+4. Compile the `client` files into static HTML using `$: npm run compile`
 
-##### 5. Configure nginx virtualhost in `/etc/nginx/sites-available/<whatever>`. Here's an example block:
+5. Configure nginx virtualhost in `/etc/nginx/sites-available/<whatever>`. Here's an example block:
 
 ```nginx
 server {
@@ -73,12 +73,12 @@ server {
 }
 ```
 
-##### 6. Make sure to enable the site, then restart nginx using
+6. Make sure to enable the site, then restart nginx using
 ```
 $: sudo service nginx restart
 ```
 
-##### 7. Start the NodeJS App specifying your own environment variables.
+7. Start the NodeJS App specifying your own environment variables.
 ```
 $: PORT=<port> DATABASE_URL=postgres://<name>:<pass>@localhost/<db_name> pm2 start server/app.js
 

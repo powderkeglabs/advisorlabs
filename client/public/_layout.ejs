@@ -27,10 +27,14 @@
 
     <%- partial("/_shared_partials/nav", {}) %>
 
-    <% if(current.path[0] == "blog" && current.source !== 'index') { %>
+    <% if(current.path[0] === "blog" && current.source !== 'index') { %>
       <%- partial(current.path[0] + "/_nest") %>
     <% } else { %>
       <%- yield %>
+    <% } %>
+
+    <% if(current.path[0] != 'request') { %>
+      <%- partial("/_shared_partials/learn_more", {}) %>
     <% } %>
 
     <%- partial("/_shared_partials/footer", {}) %>
