@@ -18,8 +18,9 @@ header {
   color: #fff;
 }
 
-header img {
-  width: 300px;
+header .page-header-heading {
+  font-weight: 600;
+  text-transform: uppercase;
 }
 
 ////// Alternating Flex Layout Elements
@@ -100,4 +101,17 @@ h1 {
 .contact-collection li {
   list-style: circle;
   margin-left: 28px;
+}
+
+
+/// --------------------------------
+/// Markdown Content
+/// --------------------------------
+.markdown-content {
+  font-size: 14px;
+}
+
+.markdown-content li {
+  list-style: circle;
+  margin-left: 20px;
 }
