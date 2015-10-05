@@ -26,11 +26,6 @@ describe("Tests", function(){
     var request = new Request();
     api.post('/Request').send(request).expect(200, function(err, res){
       if (err) done(err);
-      assert.equal(request.firstName, res.body.firstName);
-      assert.equal(request.lastName, res.body.lastName);
-      assert.equal(request.email, res.body.email);
-      assert.equal(request.orgDesc, res.body.orgDesc);
-      assert.equal(request.text, res.body.text);
       done();
     });
   });

@@ -2,6 +2,9 @@ var path = require('path'),
     rootPath = path.normalize(__dirname + '/..'),
     env = process.env.NODE_ENV || 'development';
 
+var mailchimp_api_key = (env === 'development') ? require('./config-dev').mailchimp_api_key : null;
+var mailchimp_username = (env === 'development') ? require('./config-dev').mailchimp_username : null;
+
 var config = {
   development: {
     root: rootPath,
@@ -10,7 +13,11 @@ var config = {
     },
     port: 3000,
     db: 'postgres://postgres:postgres@localhost/advisorlabs',
-    forceSync: true
+    forceSync: true,
+    mail_api_key: mailchimp_api_key,
+    mail_username: mailchimp_username,
+    contact_email: 'advisors@powderkeglabs.com',
+    contact_name: 'JJ from Advisor Labs'
   },
 
   test: {
@@ -28,7 +35,11 @@ var config = {
       name: 'advisorlabs'
     },
     port: process.env.PORT,
-    db: process.env.DATABASE_URL
+    db: process.env.DATABASE_URL,
+    mail_api_key: process.env.MAILCHIMP_APIKEY,
+    mail_username: process.env.MAILCHIMP_USERNAME,
+    contact_email: 'advisors@powderkeglabs.com',
+    contact_name: 'JJ from Advisor Labs'
   }
 };
 

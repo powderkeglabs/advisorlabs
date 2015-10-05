@@ -5,3 +5,4 @@ client/public/assets/js/config.js
 client/www
 client/dist
 .sass-cache
+server/config/config-dev.json
