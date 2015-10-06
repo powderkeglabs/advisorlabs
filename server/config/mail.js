@@ -13,7 +13,7 @@ Mailer.requestAdvisor = function(data, cb){
   var body = sprintf('From: %s <%s>\nOrg: %s\nMessage: %s\n', fullName, data.email, data.orgDesc, data.text);
 	var messageToUs = {
 		text: body,
-		subject: "New AdvisorLabs Request from " + fullName,
+		subject: "New Advisor Request from " + fullName,
 		from_email: data.email,
 		from_name: fullName,
 		to: [{email: config.contact_email}],
@@ -27,7 +27,7 @@ Mailer.requestAdvisor = function(data, cb){
     text: "Hi " + data.firstName + ",\nYour request for an advisor has been received. We will contact you within 24 hours to continue the matching process.\n\nThanks,\n" + config.contact_name,
     subject: "Confirmation of Advisor Request",
     from_email: config.contact_email,
-    from_name: 'Advisor Labs',
+    from_name: config.app.name,
     to: [{email: data.email}],
     headers: {
 			"Reply-to": config.contact_email
