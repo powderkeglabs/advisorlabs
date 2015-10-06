@@ -10,7 +10,7 @@ var Mailer = {}
 Mailer.requestAdvisor = function(data, cb){
 
   var fullName = data.firstName + " " + data.lastName;
-  var body = sprintf('From: %s <%s>\nOrg: %s\nMessage: %s\n', fullName, data.email, data.orgDesc, data.text);
+  var body = sprintf('From: %s <%s>\n\nOrg: %s\n\nMessage: %s\n', fullName, data.email, data.orgDesc, data.text);
 	var messageToUs = {
 		text: body,
 		subject: "New Advisor Request from " + fullName,

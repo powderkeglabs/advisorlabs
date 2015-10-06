@@ -34,11 +34,11 @@ router.post('/v1/Request', function(req, res, next){
     return res.status(422).send("Org description and challenges must be specified");
 
   var object = {
-    firstName: validator.escape(params.firstName),
-    lastName: validator.escape(params.lastName),
+    firstName: params.firstName,
+    lastName: params.lastName,
     email: params.email,
-    orgDesc: validator.escape(params.orgDesc),
-    text: validator.escape(params.text)
+    orgDesc: params.orgDesc,
+    text: params.text
   };
 
   // Save to the DB and send emails;
