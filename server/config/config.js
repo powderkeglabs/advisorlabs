@@ -8,20 +8,21 @@ var config = {
   development: {
     root: rootPath,
     app: {
-      name: 'advisorlabs'
+      name: 'Visory'
     },
     port: 3000,
     db: 'postgres://postgres:postgres@localhost/advisorlabs',
     forceSync: true,
     mail_api_key: mailchimp_api_key,
-    contact_email: 'advisors@powderkeglabs.com',
-    contact_name: 'JJ from Advisor Labs'
+    contact_email: 'requests@visory.co',
+    contact_name: 'JJ Hiew',
+
   },
 
   test: {
     root: rootPath,
     app: {
-      name: 'advisorlabs'
+      name: 'Visory'
     },
     port: 3000,
     db: 'postgres://localhost/advisorlabs-test'
@@ -30,13 +31,13 @@ var config = {
   production: {
     root: rootPath,
     app: {
-      name: 'advisorlabs'
+      name: 'Visory'
     },
     port: process.env.PORT,
     db: process.env.DATABASE_URL,
     mail_api_key: process.env.MAILCHIMP_APIKEY,
-    contact_email: 'advisors@powderkeglabs.com',
-    contact_name: 'JJ from Advisor Labs'
+    contact_email: 'requests@visory.co',
+    contact_name: 'JJ Hiew'
   }
 };
 
